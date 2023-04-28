@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position-nhj</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body,html{font-size: 12px;}
+    h1,h2,h3,h4,h5,h6{font-size: 100%;}
+    a{text-decoration: none; color: inherit;}
+    img{vertical-align: bottom;}
+
+      .list{
+        width: 388px;
+        margin: 80px auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .list .bg{
+        background: url("./images/bread.png");
+        width: 388px;
+        height: 388px;
+        transition: 0.7s;
+      }
+      .list .text{
+        position: absolute;
+        top: 200px;
+        background: rgba(0, 0, 0, .7);
+        width: 100%;
+        height: 388px;
+        color: #fff;
+        text-align: center;
+        padding-top: 50px;
+        transition: 0.7s;
+      }
+      .list .text img{
+        width: 80px;
+        /* height: 120px; */
+      }
+      .list .text h2{
+        font-size: 2rem;
+        margin: 1rem 0 5rem;
+      }
+      .list .text p{
+        font-size: 1.3rem;
+      }
+      .list .text a{
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        border: 1px solid;
+        margin-top: 2rem;
+      }
+      .list .text a:hover{
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+      }
+      .list:hover .bg{
+        transform: scale(1.2);
+      }
+      .list:hover .text{
+        top: 0;
+      }
+
+
+  </style>
+</head>
+<body>
+  <div class="list">
+    <div class="bg"></div>
+      <div class="text">
+        <img src="./images/pic-bread.png" alt="">
+        <h2>
+          빵 굽는 남자
+        </h2>
+        <p>
+          빵굽남은 아침마다 갓 구워낸 빵으로<br>
+          고객분들께 맛있는 빵을<br>
+          정직하게 공급하겠습니다.
+        </p>
+        <a href="javascript:void(0)">자세히보기</a>
+      </div>
+  </div>
+</body>
+
+
+</html>
+</body>

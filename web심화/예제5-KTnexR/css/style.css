@@ -1,0 +1,413 @@
+@charset "UTF-8";
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-size: 100%;
+}
+ol,ul{
+  list-style: none;
+}
+a{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+address{
+  font-style: normal;
+}
+button{
+  border: none;
+  background: transparent;
+}
+img{
+  vertical-align: bottom;
+}
+.btn{
+  display: inline-block;
+  color: #999;
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  font-size: 10px;
+}
+/* 동일한 버튼이 여러번 쓰인다면 공동영역으로 설정하고 사용할수 있음 */
+#wrap{
+  width: 100%;
+  min-width: 1000px;
+}
+.boxalign{
+  width: 1000px;
+  margin: auto;
+}
+header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  /* 헤더의 로고와 메뉴가 좌우에 붙을 있도록 사용 */
+  align-items: center;
+  /* 해더의 모든 내용들이 모두 세로 중앙으로 나타나게 사용 */
+}
+.headerLogo{
+  padding-bottom: 5px;
+}
+nav{
+}
+nav ul{
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  /* 메뉴가 동일한 간격으로 유지하도록 설정 */
+}
+nav ul li{
+  
+}
+nav ul li:hover{
+  color: #ff0000;
+}
+nav ul li::after{
+  display: block;
+  content: '';
+  border-bottom: 5px solid #ff0000;
+  width: 0;
+  /* 화면에 표시하지 않는 방법 */
+  transition: 0.5s;
+}
+nav ul li:hover::after{
+  width: 100%;
+  /* hover하면 0.5초간 왼쪽에서 오른쪽으로 길어짐 
+  a영역의 padding이 있는 간격만큼 떨어져서 보임*/
+}
+nav ul li a{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px;
+  /* a의 영역을 padding으로 조금 키워서 hover시 조금 큰 영역으로 잡기 위함 */
+}
+.searchArea{
+  display: flex;
+  align-items: center;
+}
+.searchArea .search{
+  position: relative;
+}
+.searchArea .search input{
+  height: 24px;
+  font-size: 11px;
+  padding-left: 1rem;  
+}
+.searchArea .search input::placeholder{
+  font-size: .9em;
+}
+.searchArea .search button{
+}
+.searchArea .search button img{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.searchArea > a{
+  background-image: url(../images/btnearth.png);
+  width: 28px;
+  height: 28px;
+}
+
+main{
+  background: url("../images/slideBg.jpg");
+  width: 100%;height: 499px;
+  color: #fff;
+  position: relative;
+}
+main .textcover{
+  padding-top: 5rem;
+}
+.textcover h3{
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+.textcover h2{
+  padding-top: 2rem;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+.textcover p{
+  padding-top: 2rem;
+  font-size: 1.2rem;
+}
+.textcover a{
+  display: inline-block;
+  padding: 1rem 3rem;
+  border: 1px solid;
+  margin-top: 3rem;
+}
+.textcover span{
+  margin-left: 20px;
+}
+#navSlide{
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+#navSlide ul{
+  display: flex;  
+  align-items: center;
+  /* 메뉴 높이의 중앙정렬 */
+}
+#navSlide ul li{
+  width: 200px;
+  text-align: center;
+  /* 메뉴 가로의 중앙정렬 */
+  border-left: 1px solid #555;
+}
+#navSlide ul li:last-child{
+  border-right: 1px solid #555;
+}
+#navSlide ul li a{
+  line-height: 70px;
+  /* 메뉴의 높이를 a에서 줘서 전체적인 높이를 잡았다 */
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+#navSlide ul li:hover{
+  background: rgba(255,0,0,.5)
+  /* 0.5의 0을 붙이지 않아도 상관 없다. */
+}
+section#contents{
+  padding: 6rem 0;
+}
+.contentTitle{
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.contentTitle h2{
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+.contentTitle p{
+  font-size: 1.5rem;
+}
+.content01 .contentBanner{
+  border: 1px solid #999;
+  margin-top: 3rem;
+}
+.contentBanner{
+  padding: 4rem;
+  position: relative;
+}
+.contentBanner.bgimg01{
+   background: url("../images/icon_mca01_01.png") no-repeat #eee 120px;
+   /* bg position 하나만 쓰면 나머지는 중앙정렬임 */
+}
+.contentBanner > a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* 부모 영역을 모두 링크로 걸기위해 사용
+  (만약 a 밑으로 다른 내용을 쓰면 모두 span태그밖에 못쓰기 때문에
+  a는 영역만 잡는 역할을 한 것임) */
+}
+.contentBanner .bannerText{
+  margin-left: 30rem;
+  position: relative;  
+}
+.contentBanner .bannerText::before{
+  content: '';
+  display: block;
+  width: 1px;
+  height: 150px;
+  position: absolute;
+  left: -50px;
+  top: 0;
+  background: #ccc;
+  margin-right: 20px;
+  /* 메뉴 중앙의 선을 삽입하기 위해 가상요소 생성 */
+}
+.contentBanner .bannerText h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.contentBanner .bannerText h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.contentBanner .bannerText p{
+  font-size: 1.3rem;
+  color: #333;
+}
+.contentBanner:hover .bannerText{
+  color: #fff;
+}
+.contentBanner:hover .bannerText p{
+  color: #fff;
+}
+.contentBanner:hover .bannerText .btn{
+  color: #fff;
+}
+#content02{
+  margin-top: 5rem;
+  padding-top: 7rem;
+  width: 100%;
+  height: 775px;
+  background: url("../images/bg_mCon.jpg") no-repeat center / cover;
+  /* background-size를 / 다음으로 주어도 된다. 가끔 인식 안됨. */
+}
+#content02 .vlist{
+  display: flex;
+  justify-content: space-between;
+}
+#content02 .vCont{
+  width: 320px;  
+  height: 250px;
+}
+#content02 .vCont .vCont01{
+  position: relative;
+  height: 250px;
+  padding: 30px;
+  color: #fff;
+  background: url("../images/img_circle.png") no-repeat 220px 210px;
+}
+#content02 .vCont .vCont01 a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#content02 .vCont .vCont02{
+  position: relative;
+  height: 100px;
+  background: #fff;
+  padding: 50px 25px;
+  text-align: center;
+}
+#content02 .vCont .vCont02 a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#content02 .vContent01>li:first-child{
+  background-color: #00baff ;
+}
+#content02 .vContent02>li:first-child{
+  background-color: #0076ff;
+}
+#content02 .vContent03>li:first-child{
+  background-color: #49b1ef;
+}
+.vCont h2{
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+.vCont h5{
+  font-size: 1.3rem;
+  padding-bottom: 30px;
+}
+.vCont p{
+  font-size: 1.2rem;
+}
+#content02 .vCont .btn{
+  color: #fff;
+}
+.contentBanner.bgimg02{
+  margin-top: 30px;
+  background: url("../images/icon_mca02_01.png") no-repeat #eee 80px;
+}
+#content02 .vCont02 img{
+  padding-bottom: 20px;
+}
+.contentBanner.bgimg01:hover{
+  background: url("../images/icon_mca01_02hover.png") no-repeat #eee 120px;
+  /* bg position 하나만 쓰면 나머지는 중앙정렬임 */
+  background-color: #777;
+}
+.contentBanner.bgimg02:hover{
+  background: url("../images/icon_mca02_02hover.png") no-repeat #eee 80px;
+  background-color: #777;
+}
+#content03{
+  padding: 3rem 0;
+}
+#content03 .list{
+  max-width: 1000px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* 기본값은 no-wrap으로 크기가 줄면서 한 줄에 나오는데
+  가로값이 넘치면 아래로 내려가서 정렬되도록 wrap으로 변경 */
+  margin-top: 5rem;
+}
+#content03 .list li{
+  width: 200px;
+  height: 170px;
+}
+#content03 .list li a{
+  text-align: center;
+}
+#content03 .list li a img{
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#content03 .list li a img:hover{
+  border: 1px solid rgb(255, 0, 0);
+}
+#content03 .list li a span{
+  display: block;
+}
+footer{
+  border-top: 1px solid #ccc;
+  padding: 5rem 0;
+}
+footer .boxalign{
+  display: flex;
+  justify-content: space-between;
+}
+footer .flogo{}
+footer .addr{
+  margin-left: 70px;
+  color: #999;
+}
+footer .addr ul{
+  display: flex;
+  margin-bottom: 20px;
+}
+footer .addr ul li{
+}
+footer .addr ul li a{
+  font-size: 1.2rem;
+  margin: 5px 20px;
+  position: relative;
+}
+footer .addr ul li a::after{
+  position: absolute;
+  display: block;
+  content: '';
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+  top: 5px;
+  left: -22px;
+}
+footer .addr ul li:first-child a:after{
+  width: 0;
+}
+footer .addr address{
+  padding-left: 15px;
+}
+footer select{
+  width: 150px;
+  height: 30px;
+  color: #999;
+  border: 1px solid #ccc;
+}
